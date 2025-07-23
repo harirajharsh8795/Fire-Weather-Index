@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FWI Prediction</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-r from-blue-100 via-white to-blue-100 min-h-screen flex items-center justify-center px-4">
+
+    <div class="bg-white p-8 rounded-2xl shadow-xl w-full max-w-md">
+        <h1 class="text-3xl font-bold text-center text-blue-800 mb-6">🔥 FWI Prediction</h1>
+        
+        <form action="/predictdata" method="post" class="space-y-4">
+            <input type="text" name="Temprature" placeholder="Temperature" class="w-full px-4 py-2 border rounded-md">
+            <input type="text" name="RH" placeholder="Relative Humidity" class="w-full px-4 py-2 border rounded-md">
+            <input type="text" name="WS" placeholder="Wind Speed" class="w-full px-4 py-2 border rounded-md">
+            <input type="text" name="Rain" placeholder="Rain" class="w-full px-4 py-2 border rounded-md">
+            <input type="text" name="FFMC" placeholder="FFMC" class="w-full px-4 py-2 border rounded-md">
+            <input type="text" name="DMC" placeholder="DMC" class="w-full px-4 py-2 border rounded-md">
+            <input type="text" name="ISI" placeholder="ISI" class="w-full px-4 py-2 border rounded-md">
+            <input type="text" name="Classes" placeholder="Classes" class="w-full px-4 py-2 border rounded-md">
+            <input type="text" name="Region" placeholder="Region" class="w-full px-4 py-2 border rounded-md">
+            
+            <button type="submit" class="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700">Predict</button>
+        </form>
+
+        {% if results %}
+        <p class="mt-6 text-center text-lg font-semibold text-green-700">
+            🔍 The FWI prediction is: <span class="font-bold">{{ results }}</span>
+        </p>
+        {% endif %}
+    </div>
+</body>
+</html>
